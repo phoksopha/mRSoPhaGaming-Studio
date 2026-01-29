@@ -694,6 +694,23 @@ window.addEventListener('load', () => {
 
 // ដាក់ Class 'loading' ទៅកាន់ body ភ្លាមៗពេលបើក Web
 document.body.classList.add('loading');
+
+function searchPlugin() {
+    let input = document.getElementById('pluginSearch').value.toLowerCase();
+    let items = document.getElementsByClassName('searchable-item');
+    let hasResults = false;
+
+    for (let i = 0; i < items.length; i++) {
+        let title = items[i].querySelector('.search-keyword').innerText.toLowerCase();
+        if (title.includes(input)) {
+            items[i].style.display = "";
+            hasResults = true;
+        } else {
+            items[i].style.display = "none";
+        }
+    }
+    document.getElementById('noResults').style.display = hasResults ? "none" : "block";
+}
 </script>
 <div id="detailsModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-[200] hidden flex items-center justify-center p-4">
     <div class="bg-brand-card border border-gray-800 w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl scale-95 opacity-0 transition-all duration-300" id="modalContent">
@@ -738,3 +755,4 @@ document.body.classList.add('loading');
 </body>
 
 </html>
+
