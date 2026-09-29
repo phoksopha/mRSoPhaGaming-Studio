@@ -71,6 +71,187 @@
 body.loading {
     overflow: hidden;
 }
+
+        /* =========================
+           MOBILE UI / RESPONSIVE FIXES
+           ========================= */
+        html { scroll-behavior: smooth; }
+        * { -webkit-tap-highlight-color: transparent; }
+        body { min-width: 0; }
+        img { max-width: 100%; }
+
+        .mobile-menu-button { display:none; }
+
+        @media (max-width: 767px) {
+            body { font-size: 15px; }
+            nav { position: fixed; }
+            nav > div:first-child {
+                padding-left: 14px !important;
+                padding-right: 14px !important;
+                gap: 8px !important;
+            }
+            nav .brand-title { font-size: 15px !important; }
+            nav .brand-logo { width: 36px !important; height: 36px !important; }
+            nav #authSection { margin-left: auto; gap: 6px !important; }
+            nav #loginBtn {
+                padding: 9px 11px !important;
+                font-size: 10px !important;
+                white-space: nowrap;
+            }
+            nav #loginBtn i { margin-right: 0 !important; }
+            nav #loginBtn { max-width: 43px; overflow: hidden; }
+            nav #loginBtn i { display:block; }
+            nav #userProfile button { padding-right: 8px !important; gap: 5px !important; }
+            nav #userProfile #userName,
+            nav #userProfile button > i { display:none; }
+
+            .mobile-menu-button {
+                display:flex !important;
+                width: 40px;
+                height: 40px;
+                align-items:center;
+                justify-content:center;
+                border:1px solid rgba(255,255,255,.08);
+                background:#111;
+                border-radius:12px;
+                flex-shrink:0;
+            }
+
+            nav .nav-links {
+                position: fixed !important;
+                top: 66px !important;
+                left: 10px !important;
+                right: 10px !important;
+                width: auto !important;
+                padding: 10px !important;
+                border:1px solid rgba(255,255,255,.08);
+                border-radius:18px;
+                background:rgba(10,10,10,.97) !important;
+                backdrop-filter:blur(18px);
+                box-shadow:0 18px 45px rgba(0,0,0,.55);
+                gap:4px !important;
+                z-index:90;
+            }
+            nav .nav-links a {
+                display:flex;
+                align-items:center;
+                min-height:44px;
+                padding:10px 12px;
+                border-radius:10px;
+                font-size:12px;
+            }
+            nav .nav-links a:hover { background:rgba(211,47,47,.1); }
+
+            nav > div.md\\:hidden {
+                padding: 7px 14px 12px !important;
+            }
+
+            header {
+                padding-top: 150px !important;
+                padding-bottom: 55px !important;
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+            header h1 {
+                font-size: clamp(2.15rem, 10vw, 3.4rem) !important;
+                line-height: .98 !important;
+                margin-bottom:18px !important;
+            }
+            header p {
+                font-size: 14px !important;
+                line-height:1.7 !important;
+                margin-bottom:24px !important;
+            }
+            header .flex.flex-wrap.justify-center.gap-4 {
+                flex-direction:column;
+                width:100%;
+                max-width:360px;
+                margin:0 auto;
+            }
+            header .flex.flex-wrap.justify-center.gap-4 a {
+                width:100%;
+                justify-content:center;
+                min-height:48px;
+            }
+            header > div > button.mobile-menu-button { margin-top:16px; }
+
+            #explore {
+                padding-left:14px !important;
+                padding-right:14px !important;
+                padding-top:36px !important;
+            }
+            #explore > .flex.items-center {
+                margin-bottom:24px !important;
+                gap:10px !important;
+            }
+            #explore h2 {
+                font-size:1.35rem !important;
+                line-height:1.2;
+            }
+
+            #itemsGrid { gap:16px !important; }
+            .searchable-item { border-radius:18px !important; }
+            .searchable-item > div:first-child { height:180px !important; }
+            .searchable-item .p-6 { padding:17px !important; }
+            .searchable-item h3 { font-size:1.35rem !important; line-height:1.2; }
+            .searchable-item p { font-size:13px !important; line-height:1.6; }
+            .searchable-item .grid.grid-cols-2 { gap:8px !important; }
+            .searchable-item .grid.grid-cols-2 > * {
+                min-height:44px;
+                padding-left:8px !important;
+                padding-right:8px !important;
+            }
+
+            #stats { padding:55px 0 !important; }
+            #stats .max-w-6xl { padding-left:14px !important; padding-right:14px !important; }
+            #stats .grid { gap:12px !important; }
+            #stats .p-8 { padding:24px 16px !important; border-radius:20px !important; }
+            #stats h3 { font-size:2.4rem !important; }
+
+            #donate { padding:60px 0 !important; }
+            #donate > .max-w-4xl { padding-left:14px !important; padding-right:14px !important; }
+            #donate h2 { font-size:2rem !important; }
+            #donate .grid { gap:12px !important; }
+            #donate .grid a { padding:22px !important; }
+
+            #support { padding:55px 0 !important; }
+            #support .max-w-2xl { padding-left:14px !important; padding-right:14px !important; }
+            #support .bg-brand-card { padding:20px !important; border-radius:20px !important; }
+            #support input, #support textarea { font-size:16px !important; }
+
+            footer { padding-top:55px !important; }
+            footer .max-w-6xl { padding-left:18px !important; padding-right:18px !important; }
+            footer .grid { gap:30px !important; }
+            footer .grid > div { min-width:0; }
+
+            #detailsModal { padding:10px !important; }
+            #modalContent {
+                max-height:calc(100dvh - 20px);
+                overflow-y:auto;
+                border-radius:20px !important;
+            }
+            #modalImage { height:170px !important; }
+            #modalContent > .p-8 { padding:20px !important; }
+            #modalTitle { font-size:1.55rem !important; line-height:1.15; }
+            #modalContent .grid.grid-cols-2 { gap:8px !important; }
+            #modalContent .grid.grid-cols-2 > div { padding:12px !important; }
+            #modalFooter { flex-direction:column; }
+            #modalFooter button { width:100%; min-height:46px; }
+
+            #loader h2 { letter-spacing:.18em !important; }
+        }
+
+        @media (max-width: 390px) {
+            nav .brand-title { display:none; }
+            nav #loginBtn { max-width:40px; padding-left:10px !important; padding-right:10px !important; }
+            header h1 { font-size:2rem !important; }
+            .searchable-item > div:first-child { height:165px !important; }
+            .searchable-item h3 { font-size:1.2rem !important; }
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-button { display:none !important; }
+        }
     </style>
 </head>
 
@@ -91,9 +272,9 @@ body.loading {
             <a href="index.html" class="flex items-center gap-3 group">
                 <div class="relative">
                     <div class="absolute inset-0 bg-brand-red blur opacity-50 group-hover:opacity-100 transition duration-500 rounded-full"></div>
-                    <img src="images/photo_2025-11-06_17-47-37.jpg" alt="Logo" class="relative w-10 h-10 rounded-full border-2 border-brand-red object-cover">
+                    <img src="images/photo_2025-11-06_17-47-37.jpg" alt="Logo" class="relative w-10 h-10 rounded-full border-2 border-brand-red object-cover brand-logo">
                 </div>
-                <div class="text-xl md:text-2xl font-black italic tracking-tighter">
+                <div class="text-xl md:text-2xl font-black italic tracking-tighter brand-title">
                     <span class="text-white">mRSoPha</span><span class="text-brand-red">Gaming</span>
                 </div>
             </a>
@@ -106,10 +287,13 @@ body.loading {
             <div class="flex-1 max-w-md hidden md:block">
                 <div class="search-container relative flex items-center bg-brand-accent border border-gray-800 rounded-full px-4 py-2 transition-all duration-300">
                     <i class="fa-solid fa-search text-gray-500 mr-3"></i>
-                    <input type="text" id="pluginSearch" onkeyup="searchPlugin()" placeholder="Search plugins, mods..." class="bg-transparent w-full text-sm focus:outline-none text-white placeholder-gray-500">
+                    <input type="text" id="pluginSearch" oninput="searchPlugin(this.value)" placeholder="Search plugins, mods..." class="bg-transparent w-full text-sm focus:outline-none text-white placeholder-gray-500">
                 </div>
             </div>
 
+            <button type="button" onclick="toggleMenu()" class="mobile-menu-button text-white" aria-label="Open navigation menu">
+                <i id="navMenuIcon" class="fa-solid fa-bars"></i>
+            </button>
             <div id="authSection" class="flex items-center gap-4">
     <button id="loginBtn" onclick="discordLogin()" class="btn-premium px-5 py-2 rounded-full text-xs flex items-center gap-2">
         <i class="fa-brands fa-discord"></i> LOGIN WITH DISCORD
@@ -142,7 +326,10 @@ body.loading {
 </div>
         </div>
         <div class="md:hidden px-6 pb-3">
-             <input type="text" onkeyup="searchPlugin()" placeholder="Search..." class="w-full bg-brand-accent border border-gray-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-brand-red text-white">
+             <div class="relative">
+    <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
+    <input type="text" id="mobilePluginSearch" oninput="searchPlugin(this.value)" placeholder="Search plugins, mods..." aria-label="Search plugins and mods" class="w-full bg-brand-accent border border-gray-800 rounded-xl pl-10 pr-4 py-3 text-sm focus:outline-none focus:border-brand-red text-white">
+</div>
         </div>
     </nav>
 
@@ -165,9 +352,7 @@ body.loading {
                     <i class="fa-brands fa-youtube"></i> SUBSCRIBE
                 </a>
             </div>
-            <button onclick="toggleMenu()" class="md:hidden text-white text-2xl">
-            <i id="menuIcon" class="fa-solid fa-bars"></i>
-</button>
+
         </div>
     </header>
 
@@ -701,25 +886,48 @@ const observer = new IntersectionObserver((entries) => {
 observer.observe(document.querySelector('#stats'));
 
 function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links'); // ដាក់ Class នេះទៅកាន់ Div ដែលផ្ទុក Link របស់អ្នក
-    const icon = document.getElementById('menuIcon');
-    
-    navLinks.classList.toggle('hidden');
-    navLinks.classList.toggle('flex-col');
-    navLinks.classList.toggle('absolute');
-    navLinks.classList.toggle('top-20');
-    navLinks.classList.toggle('left-0');
-    navLinks.classList.toggle('w-full');
-    navLinks.classList.toggle('bg-black');
-    navLinks.classList.toggle('p-6');
+    const navLinks = document.querySelector('.nav-links');
+    const icon = document.getElementById('navMenuIcon') || document.getElementById('menuIcon');
+    if (!navLinks) return;
 
-    // ប្តូររូប Icon
-    if (icon.classList.contains('fa-bars')) {
-        icon.classList.replace('fa-bars', 'fa-xmark');
-    } else {
-        icon.classList.replace('fa-xmark', 'fa-bars');
+    const isHidden = navLinks.classList.contains('hidden');
+    navLinks.classList.toggle('hidden', !isHidden);
+    navLinks.classList.toggle('flex', isHidden);
+
+    if (icon) {
+        icon.classList.toggle('fa-bars', !isHidden);
+        icon.classList.toggle('fa-xmark', isHidden);
     }
 }
+
+document.addEventListener('click', (event) => {
+    const navLinks = document.querySelector('.nav-links');
+    const menuButton = document.querySelector('.mobile-menu-button');
+    if (!navLinks || window.innerWidth >= 768) return;
+    if (!navLinks.classList.contains('hidden') &&
+        !navLinks.contains(event.target) &&
+        !menuButton?.contains(event.target)) {
+        navLinks.classList.add('hidden');
+        navLinks.classList.remove('flex');
+        const icon = document.getElementById('navMenuIcon');
+        if (icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-xmark');
+        }
+    }
+});
+
+window.addEventListener('resize', () => {
+    const navLinks = document.querySelector('.nav-links');
+    if (window.innerWidth >= 768 && navLinks) {
+        navLinks.classList.remove('hidden');
+        navLinks.classList.add('flex');
+    } else if (navLinks) {
+        navLinks.classList.add('hidden');
+        navLinks.classList.remove('flex');
+    }
+});
+
 window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
     
@@ -737,22 +945,36 @@ window.addEventListener('load', () => {
 // ដាក់ Class 'loading' ទៅកាន់ body ភ្លាមៗពេលបើក Web
 document.body.classList.add('loading');
 
-function searchPlugin() {
-    let input = document.getElementById('pluginSearch').value.toLowerCase();
-    let items = document.getElementsByClassName('searchable-item');
+function searchPlugin(value) {
+    const input = String(value ?? document.getElementById('pluginSearch')?.value ?? '').trim().toLowerCase();
+    const desktop = document.getElementById('pluginSearch');
+    const mobile = document.getElementById('mobilePluginSearch');
+
+    // Keep both search boxes synchronized on mobile/desktop.
+    if (desktop && document.activeElement !== desktop) desktop.value = value ?? input;
+    if (mobile && document.activeElement !== mobile) mobile.value = value ?? input;
+
+    const items = document.getElementsByClassName('searchable-item');
     let hasResults = false;
 
     for (let i = 0; i < items.length; i++) {
-        let title = items[i].querySelector('.search-keyword').innerText.toLowerCase();
-        if (title.includes(input)) {
-            items[i].style.display = "";
-            hasResults = true;
-        } else {
-            items[i].style.display = "none";
-        }
+        const keyword = items[i].querySelector('.search-keyword');
+        const title = keyword ? keyword.innerText.toLowerCase() : '';
+        const matches = !input || title.includes(input);
+        items[i].style.display = matches ? '' : 'none';
+        if (matches) hasResults = true;
     }
-    document.getElementById('noResults').style.display = hasResults ? "none" : "block";
+
+    const noResults = document.getElementById('noResults');
+    if (noResults) noResults.style.display = hasResults ? 'none' : 'block';
 }
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        const modal = document.getElementById('detailsModal');
+        if (modal && !modal.classList.contains('hidden')) closeDetails();
+    }
+});
 </script>
 <div id="detailsModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-[200] hidden flex items-center justify-center p-4">
     <div class="bg-brand-card border border-gray-800 w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl scale-95 opacity-0 transition-all duration-300" id="modalContent">
